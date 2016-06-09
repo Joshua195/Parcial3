@@ -16,20 +16,9 @@ public class MySqlConn {
         this.user = user;
         this.password = password;
         this.databaseName = databaseName;
-
-        //try {
-            Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://"+ ip +"/";
-            conn = DriverManager.getConnection(connectionUrl,user,password);
-        //} catch (SQLException e) {
-          //  System.out.println("SQL Exception: " + e.toString());
-            //JOptionPane.showMessageDialog(null, "Login not successful ", "Try again", JOptionPane.ERROR_MESSAGE);
-
-        //} catch (ClassNotFoundException cE) {
-            //System.out.println("Class Not Found Exception: " + cE.toString());
-            //JOptionPane.showMessageDialog(null, "Login not successful ", "Try again", JOptionPane.ERROR_MESSAGE);
-
-        //}
+        Class.forName("com.mysql.jdbc.Driver");
+        String connectionUrl = "jdbc:mysql://"+ ip +"/";
+        conn = DriverManager.getConnection(connectionUrl,user,password);
     }
 
     public int update(String query) {
